@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="title">Список задач</h1>
+    <input type="text" class="taskInput" id="taskInput" placeholder="Введите новую задачу" />
+    <button class="addTaskButton" id="addTaskButton">Добавить задачу</button>
+
+    <h2 class="title">Фильтр по статусу</h2>
+    <select class="statusFilter" id="statusFilter">
+        <option value="all">Все</option>
+        <option value="completed">Выполненные</option>
+        <option value="notCompleted">Невыполненные</option>
+    </select>
+
+    <ul class="taskList" id="taskList"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

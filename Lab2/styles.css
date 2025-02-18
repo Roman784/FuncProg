@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.title {
+    color: #333333;
+}
+
+.taskInput {
+    border: 1px solid #e7e7e7;
+    border-radius: 10px 0px 0px 10px;
+    padding: 15px;
+    padding-right: 70%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+
+.addTaskButton {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.addTaskButton:hover {
+    background-color: rgb(33, 113, 204);
+    box-shadow: none;
+}
+
+.taskList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+
+.completedCheckbox {
+    width: 20px;
+    height: 20px;
+    color: #3498db;
+}
+
+.completedTask {
+    color: rgb(129, 129, 129);
+}
+
+.deleteTaskButton {
+    background-color: #e7412e;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.deleteTaskButton:hover {
+    background-color: #ad3224;
+}
+
+.statusFilter {
+    padding: 10px 10px;
+    border: 1px solid #3498db;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #333333;
+    cursor: pointer;
+    font-size: 16px;
+}
