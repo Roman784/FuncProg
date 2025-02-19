@@ -24,7 +24,7 @@ const getAverage = (arr, threshold) => {
 };
 
 // Демонстрация работы --------------------------------------------------------------------------------------------------------------------------
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const numbers = [1, 2, 3, 5, 6, 8, 9];
 const objects = [{num: 1}, {obj: null}, {num: 2}, {value: "value1"}, {value: "value2"}, {num: 3}, {num: 4}];
 
 console.log("Исходный массив чисел: " + numbers);

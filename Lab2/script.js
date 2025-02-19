@@ -19,17 +19,16 @@ function saveTasks(tasks) {
 }
 
 function renderTasks() {
-    const tasks = loadTasks();
     const status = statusFilter.value;
-
+    const tasks = loadTasks();
+    const sortedTasks = tasks.filter(task =>
+        status === "completed" && task.completed ||
+        status === "notCompleted" && !task.completed ||
+        status === "all"
+    );
+    
     taskList.innerHTML = '';
-
-    tasks.forEach((task, index) => {
-        if (status === 'completed' && !task.completed) return;
-        if (status === 'notCompleted' && task.completed) return;
-
-        renderTask(task, index);
-    });
+    sortedTasks.forEach((task, index) => renderTask(task, index));
 }
 
 function renderTask(task, index) {
@@ -69,8 +68,8 @@ function toggleTask(index) {
 
 function deleteTask(index) {
     const tasks = loadTasks();
-    tasks.splice(index, 1);
-    saveTasks(tasks);
+    newTasks = tasks.filter((_, i) => i != index);
+    saveTasks(newTasks);
 
     renderTasks();
 }
