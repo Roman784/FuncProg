@@ -21,8 +21,9 @@ let sin a = Math.Sin(degToRad a)
 let cos a = Math.Cos(degToRad a)
 let tan a = Math.Tan(degToRad a)
 
-let parseExpression expression =
-    let matches = Regex.Match(expression, @"^(-?[0-9.]+)\s*([\+\-\*\/\^]|v|sin|cos|tan)\s*(-?[0-9.]+)?$")
+let parseExpression (expression: string) =
+    let formatedExp = expression.Replace(" ", "").Replace(",", ".")
+    let matches = Regex.Match(formatedExp, @"^(-?[0-9.]+)\s*([\+\-\*\/\^]|v|sin|cos|tan)\s*(-?[0-9.]+)?$")
     if matches.Success then
         let a = float matches.Groups.[1].Value
         let operation = string matches.Groups.[2].Value
