@@ -11,16 +11,16 @@ const add: Operation = (a, b) => a + b;
 const subtract: Operation = (a, b) => a - b;
 const multiply: Operation = (a, b) => a * b;
 const divide: Operation = (a, b) => a / b;
-const degree: Operation = (a, b) => Math.pow(a, b);
-const square: Operation = (a, b) => a * Math.sqrt(b);
+const power: Operation = (a, b) => Math.pow(a, b);
+const squareRoot: Operation = (a, b) => a * Math.sqrt(b);
 
 const operationsMap: { [key: string]: Operation } = {
     '+': add,
     '-': subtract,
     '*': multiply,
     '/': divide,
-    '^': degree,
-    'v': square
+    '^': power,
+    'v': squareRoot
 };
 
 function calculate(): void {

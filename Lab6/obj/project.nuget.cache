@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "NUpHkZxytsoYy4Dy5PSl9SBB0WjfRp/bVix1nwfbPrFvgp/BVL272XsSHzNco+csuecHOgZdJmzE4pHWwL2NPA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rmiro\\Desktop\\Лабы\\3курс\\2сем\\ФП\\FuncProg\\Lab6\\Lab6.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rmiro\\.nuget\\packages\\fsharp.core\\8.0.101\\fsharp.core.8.0.101.nupkg.sha512"
+  ],
+  "logs": []
+}
