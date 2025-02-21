@@ -6,9 +6,17 @@ let degToRad degrees = degrees * Math.PI / 180.0
 let add a b = a + b
 let subtract a b = a - b
 let multiply a b = a * b
-let divide a b = a / b
+let divide a b = 
+    if b = 0.0 then
+        raise (DivideByZeroException("Деление на 0."))
+    else
+        a / b
 let power a b = a ** b
-let squareRoot a = Math.Sqrt(a)
+let squareRoot a = 
+    if a < 0.0 then 
+        raise (ArgumentException("Квадратный корень из отрицательного числа."))
+    else 
+        Math.Sqrt(a)
 let sin a = Math.Sin(degToRad a)
 let cos a = Math.Cos(degToRad a)
 let tan a = Math.Tan(degToRad a)
@@ -22,8 +30,7 @@ let parseExpression expression =
             
         (a, operation, b)
     else
-        printfn "Ошибка ввода."
-        (0.0, "", 0.0)
+        raise (ArgumentException("Не удалось преобразовать выражение."))
 
 let calculate a operation b =
     match operation with
@@ -36,18 +43,19 @@ let calculate a operation b =
     | "sin" -> a * sin b
     | "cos" -> a * cos b
     | "tan" -> a * tan b
-    | _ -> 0.0
+    | _ -> raise (InvalidOperationException("Неизвестная операция."))
 
 [<EntryPoint>]
 let main argv =
     let rec loop () =
         printfn "Введите выражение:"
-
         let expression = Console.ReadLine()
-        let (a, operation, b) = parseExpression expression
-        let result = calculate a operation b
+        try
+            let (a, operation, b) = parseExpression expression
+            let result = calculate a operation b
+            printfn "Результат: %f" result
+        with
+        | ex -> printfn "Ошибка: %s" ex.Message
 
-        printfn "Результат: %f" result
-        
         loop ()
     loop ()
